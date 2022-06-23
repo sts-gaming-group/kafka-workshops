@@ -1,0 +1,7 @@
+services:
+  php:
+    build: docker/php-fpm
+    working_dir: /application/app
+    volumes:
+      - .:/application
+      - ./docker/php-fpm/php-ini-overrides.ini:/usr/local/etc/php/conf.d/99-overrides.ini
