@@ -1,3 +1,6 @@
+# Kafka
+### Broker: 34.116.153.222:9092
+
 # Zadanie: 
 Stworzyć aplikację opartą o Apache Kafka, która będzie składała się z producera wiadomości oraz konsumera.
 
