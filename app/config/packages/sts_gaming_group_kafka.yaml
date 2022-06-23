@@ -1,13 +1,16 @@
 sts_gaming_group_kafka:
   consumers:
     instances:
-      App\Consumer\ExampleConsumer:
+      App\Consumer\RegistrationConsumer:
         brokers: [ '34.116.153.222:9092']
         decoder: StsGamingGroup\KafkaBundle\Decoder\JsonDecoder
         group_id: 'mw'
         topics: [ 'mw_test' ]
+        max_retries: 3
+        validators:
+          - App\Validator\AgeValidator
   producers:
     instances:
-      App\Producer\ExampleProducer:
+      App\Producer\RegistrationProducer:
         brokers: [ '34.116.153.222:9092']
         producer_topic: 'mw_test'
